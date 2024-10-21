@@ -15,7 +15,7 @@ class FileUtil
 		~FileUtil();
 
 		void		openFile(std::string fileName);
-		std::string readFile();
+		bool	 	readFile(std::string &line);
 		void		writeFile(std::string str);
 };
 

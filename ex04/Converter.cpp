@@ -12,11 +12,14 @@ bool Converter::isDetected(std::string line) {
 
 std::string Converter::newString(std::string line) {
 	std::string tmp = line;
-	size_t	idx;
+	size_t	idx = 0;
+
+	if (mStr1 == mStr2 || mStr1 == "")
+		return tmp;
 
 	idx = tmp.find(mStr1);
 	while (idx != std::string::npos) {
-		tmp.erase(idx, idx + mStr1.size());
+		tmp.erase(idx, mStr1.size());
 		tmp.insert(idx, mStr2);
 		idx = tmp.find(mStr1);
 	}

@@ -2,6 +2,11 @@
 
 FileUtil::FileUtil() {}
 
+FileUtil::~FileUtil() {
+	mInputFile.close();
+	mOutputFile.close();
+}
+
 void	FileUtil::openFile(std::string fileName) {
 	mInputFile.open(fileName);
 	if (!mInputFile) {
@@ -18,19 +23,13 @@ void	FileUtil::openFile(std::string fileName) {
 // 	mOutputFile.open(fileName + ".replace");
 // }
 
-FileUtil::~FileUtil() {
-	mInputFile.close();
-	mOutputFile.close();
-}
-
-std::string FileUtil::readFile() {
-	std::string line;
+bool FileUtil::readFile(std::string &line) {
 
 	if (std::getline(mInputFile, line))
-		return line;
-	return NULL;
+		return true;
+	return false;
 }
 
 void	FileUtil::writeFile(std::string newLine) {
-	mOutputFile << newLine;
+	mOutputFile << newLine << '\n';
 }
