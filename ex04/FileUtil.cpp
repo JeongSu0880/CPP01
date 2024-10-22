@@ -8,11 +8,14 @@ FileUtil::~FileUtil() {
 }
 
 void	FileUtil::openFile(std::string fileName) {
-	mInputFile.open(fileName);
+	const char *file = fileName.c_str();
+	mInputFile.open(file);
 	if (!mInputFile) {
 		throw std::runtime_error("Unable to open file: " + fileName);
 	} 
-	mOutputFile.open(fileName + ".replace");
+	std::string tmp = fileName + ".replace";
+	const char *replaceFile = tmp.c_str();
+	mOutputFile.open(replaceFile);
 }
 
 // FileUtil::FileUtil(std::string fileName) {

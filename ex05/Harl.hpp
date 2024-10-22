@@ -23,7 +23,6 @@ class Harl
 		~Harl();
 
 		void	complain(std::string level);
-		void	filter(std::string level);
 
 };
 
