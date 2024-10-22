@@ -8,12 +8,3 @@ Zombie *Zombie::newZombie(std::string name)
 	return (zombie);
 }
 
-std::string	nameZombie(int i)
-{
-	std::stringstream ss;
-	ss << i << "번째 좀비";
-	std::string result = ss.str();
-	return result;
-}
-
-
