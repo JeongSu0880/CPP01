@@ -1,9 +1,7 @@
 CXX = c++
 CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 NAME = ex04
-SRCS = main.cpp \
-		FileUtil.cpp \
-		Converter.cpp
+SRCS = main.cpp 
 OBJS = $(SRCS:%cpp=%o)
 
 all : $(NAME)

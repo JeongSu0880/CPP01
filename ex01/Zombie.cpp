@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+Zombie::Zombie() : name("no name yet")
 {
 	std::cout << "no name yet" << " is created" << std::endl;
 }

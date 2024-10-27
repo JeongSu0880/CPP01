@@ -51,12 +51,15 @@ void	Harl::filter(std::string level) {
 		case 0 :
 			std::cout << "[" << levelString[0] << "]" << std::endl;
 			debug();
+			__attribute__((fallthrough));
 		case 1 :
 			std::cout << "[" << levelString[1] << "]" << std::endl;
 			info();
+			__attribute__((fallthrough));
 		case 2 :
 			std::cout << "[" << levelString[2] << "]" << std::endl;
 			warning();
+			__attribute__((fallthrough));
 		case 3 :
 			std::cout << "[" << levelString[3] << "]" << std::endl;
 			error();
